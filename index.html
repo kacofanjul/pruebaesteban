@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales y Gráficos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Datos Personales</h1>
+        <form id="dataForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad (años):</label>
+                <input type="number" id="edad" name="edad" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="altura">Altura (cm):</label>
+                <input type="number" id="altura" name="altura" min="0" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" min="0" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" required>
+            </div>
+
+            <button type="submit">Agregar Datos y Graficar</button>
+            <button type="button" id="clearDataButton">Limpiar Todos los Datos</button>
+        </form>
+
+        <h2>Datos Ingresados:</h2>
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Altura (cm)</th>
+                        <th>Peso (kg)</th>
+                        <th>IMC</th>
+                        <th>Ciudad</th>
+                        <th>País</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos se agregarán aquí por JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Gráficos:</h2>
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <h3>Distribución de Edades</h3>
+                <canvas id="ageChart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <h3>Distribución de Países</h3>
+                <canvas id="countryChart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <h3>Tendencia de IMC (Primeros 10 usuarios)</h3>
+                <canvas id="bmiChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir Chart.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
